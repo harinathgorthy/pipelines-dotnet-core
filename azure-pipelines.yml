@@ -16,10 +16,3 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- task: InvokeRESTAPI@1
-  inputs:
-    connectionType: 'connectedServiceName'
-    serviceConnection: 'TestConnection'
-    method: 'POST'
-    waitForCompletion: 'false'
-    successCriteria: 'succeeded()'
